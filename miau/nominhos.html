@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junção nominhos</title>
+</head>
+<body>
+    <script>
+        /*
+
+        */
+
+        const vick = "victória";
+        const nick = "nicolas";
+
+        function createSubStrStart(string){
+            let arraySubstrings = [];
+            for(let i = 0; i < string.length; i++){
+                let subStr = string.substring(0, i + 1);
+                arraySubstrings.push(subStr);
+            }
+            return arraySubstrings;
+        }
+
+        function createSubStrEnd(string){
+            let arraySubstrings = [];
+            for(let i = string.length - 1; i >= 0; i--){
+                let subStr = string.substr(i);
+                arraySubstrings.push(subStr);
+            }
+            return arraySubstrings;
+        }
+
+        function createCombinations(one, two){
+            let combinations = [];
+            one.forEach(sub => {
+                for (let i = 0; i < two.length; i++) {
+                    let combination = sub + two[i];
+                    combinations.push(combination);
+                }
+            });
+            two.forEach(sub => {
+                for (let i = 0; i < one.length; i++) {
+                    let combination = sub + one[i];
+                    combinations.push(combination);
+                }
+            });
+            return combinations;
+        }
+
+        let vickSubStrs = createSubStrStart(vick);
+        let nickSubStrs = createSubStrEnd(nick);
+
+        console.log(createCombinations(vickSubStrs, nickSubStrs));
+    </script>
+</body>
+</html>

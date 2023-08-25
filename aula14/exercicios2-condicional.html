@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exercícios JavaScript - Condicional e repetição</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+        function buttonGo(from,to) {
+            document.getElementById(to).innerHTML = window["exf"+from](document.getElementById("input"+from).value);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h2>Aula 14</h2>
+        <h1>Exercícios JavaScript</h1>
+        <h1>Condicional</h1>
+    </header>
+    <main>
+        <h2>Introdução</h2>
+        <p>Nos exercícios abaixo, vamos usar as caixinhas de texto para testar nosso código com vários valores. Para isso, precisamos trabalhar em uma estrutura diferente, não usaremos mais o <code>document.write()</code>. Analise o código abaixo COM ATENÇÃO para entender a nova estrutura:</p>
+
+        <h3>Exemplo 1</h3>
+        <!-- Os exercícios começam com um parágrafo que descreve o que deve ser feito. Leia com atenção. -->
+        <p>Lista de tópicos de números de 1 até o número digitado.</p>
+        
+        <!-- Então temos um elemento input que é a caixa de texto -->
+        <input type="text" id="input001">
+        <!-- Em seguida, um botão. Quando clicado, ele executa a função que você modificará no exercício -->
+        <button onclick="buttonGo('001','ul001')">Vai!</button>
+
+        <!-- Em seguida, algum elemento que irá receber o texto que você vai construir dentro da função. No casso deste exemplo, faremos uma lista de tópicos, então o elemento será ul. -->
+        <ul id="ul001"></ul>
+        
+        <!-- Então abrimos o script. Dentro dele terá uma declaração de função. Você ira mexer apenas no interior desta função. -->
+        <script type="text/javascript">
+            function exf001(texto) { // Declaração da função, não mexer
+                let s = ""; // Declaração da variável s, não mexer. 
+
+                // A partir daqui é que você vai mexer.
+                // --> Use a variável texto, ela terá o texto que foi digitado na caixinha no site
+                // --> Use a variável s para montar a string. Essa é a string que vai pra dentro do elemento HTML do exercício. Ela deverá ter as tags HTML com o conteúdo que o exercício pede.
+
+                // Neste exemplo, vamos criar um for. Ele irá montar a string s.
+                for (let i=1; i<=texto; i++) {
+                    // Use o s+= para adicionar texto à string s
+                    // Neste exemplo, vamos criar elementos li, então montamos a string s com <li> e </li>
+                    s += "<li>"+i+"</li>";
+                }
+
+                // Aqui a string s está pronta. Ela vai ser enviada para o conteúdo do elemento HTML do exercício
+                return s;
+            }
+        </script>
+        <h3>Exemplo 2</h3>
+        <p>Um parágrafo que diz se o número digitado é par</p>
+        <input type="text" id="input002" placeholder="Digite um número">
+        <button onclick="buttonGo('002','p002')">Vai!</button>
+        <!-- Neste exemplo vamos construir o conteúdo do elemento p abaixo -->
+        <p id="p002"></p>
+        <script type="text/javascript">
+            function exf002(texto) { // Não mexer
+                let s = ""; // Não mexer
+
+                // A partir daqui é que você vai mexer
+                if (texto%2==0){
+                    s += "Número par!" // Estamos montrando um p, então não precisamos de tags dentro dele
+                }
+                else if (texto%2>0) {
+                    s += "Não é par"
+                }
+                else {
+                    s += "Não é número"
+                }
+                // Fim do que você vai mexer
+
+                return s; // Não mexer
+            }
+        </script>
+
+        <!-- ____________________ -->
+        <!--   Fim dos exemplos   -->
+        <!-- ____________________ -->
+
+        <h2>Condicional</h2>
+        <h3>Exercício 1</h3>
+        <p>Um parágrafo que diz se o usuário digitou o seu nome corretamente na caixa</p>
+        <input type="text" id="input1" placeholder="Quem é a mais linda?">
+        <button onclick="buttonGo('1','p1')">Vai!</button>
+        <!-- Neste exemplo vamos construir o conteúdo do elemento p abaixo -->
+        <p id="p1"></p>
+        <script type="text/javascript">
+            function exf1(texto) { // Não mexer
+                let s = ""; // Não mexer
+
+                // A partir daqui é que você vai mexer
+
+                if(texto === 'Vick'){
+                    s += 'Você acertou!';
+                } else {
+                    s += 'Errado! A resposta correta é: Vick.';
+                }
+
+                // Fim do que você vai mexer
+
+                return s; // Não mexer
+            }
+        </script>
+        <h3>Exercício 2</h3>
+        <p>Diga SEXTOOOU!!! se hoje for sexta-feira</p>
+        <!-- Obs: esse exercício não tem caixa de texto, use o dia de hoje, confrome vimos na aula -->
+        <input type="hidden" id="input2">
+        <button onclick="buttonGo('2','p2')">Vai!</button>
+        <p id="p2"></p>
+        <script type="text/javascript">
+            function exf2(texto) { // Não mexer
+                let s = ""; // Não mexer
+
+                // A partir daqui é que você vai mexer
+                
+                let hoje = new Date();
+                
+                if(hoje.getDay() === 5){
+                    s += 'SEXTOOOOOU!';
+                } else {
+                    s += 'aguente mais um pouco, daqui a pouco a sexta-feira chega.';
+                }
+
+                // Fim do que você vai mexer
+
+                return s; // Não mexer
+            }
+        </script>
+        <h3>Exercício 3</h3>
+        <p>Entrada na montranha russa. Apenas pessoas com mais de 14 anos e menos de 60 podem entrar na montanha russa. Escreva em um parágrafo se a pessoa pode ou não entrar.</p>
+        <input type="text" id="input3" placeholder="Digite sua idade">
+        <button onclick="buttonGo('3','p3')">Vai!</button>
+        <p id="p3"></p>
+        <script type="text/javascript">
+            function exf3(texto) { // Não mexer
+                let s = ""; // Não mexer
+
+                // A partir daqui é que você vai mexer
+                
+                if(texto > 14 && texto < 60){
+                    s += 'pode entrar!'
+                } else {
+                    s += 'não pode entrar.';
+                }
+
+                // Fim do que você vai mexer
+
+                return s; // Não mexer
+            }
+        </script>
+
+        <h3>Exercício 4</h3>
+        <p>Entrada na montranha russa, de novo. Mas agora a pessoa digitará o seu ano de nascimento. Vamos supor que a pessoa já fez aniversário esse ano</p>
+        <input type="text" id="input4" placeholder="Digite o ano que você nasceu">
+        <button onclick="buttonGo('4','p4')">Vai!</button>
+        <p id="p4"></p>
+
+        <script type="text/javascript">
+            function exf4(texto) { // Não mexer
+                let s = ""; // Não mexer
+
+                // A partir daqui é que você vai mexer
+                
+                let idade = 2023 - texto;
+
+                if(idade > 14 && idade < 60){
+                    s += 'pode entrar!'
+                } else {
+                    s += 'não pode entrar.';
+                }
+
+                // Fim do que você vai mexer
+
+                return s; // Não mexer
+            }
+        </script>
+    </main>
+    <footer>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+    </footer>
+    </body>
+</html>

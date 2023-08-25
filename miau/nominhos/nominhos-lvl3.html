@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 3</title>
+  </head>
+  <body>
+    <h1>combinação de nomes.</h1>
+    <p>insira dois nomes para imprimir todas as combinações possíveis:</p>
+    <form id="form" onsubmit="combNames(name1.value, name2.value)">
+      <label for="name1">primeiro nome:</label>
+      <input type="text" name="name1" id="name1" />
+      <label for="name2">segundo nome:</label>
+      <input type="text" name="name2" id="name2" />
+      <button type="submit" id="btnSend">enviar</button>
+    </form>
+    <ul id="father"></ul>
+
+    <script>
+      let father = document.getElementById("father");
+
+      function combNames(name1, name2) {
+        event.preventDefault();
+        father.innerHTML = "";
+
+        for (let i = 0; i < name1.length; i++) {
+          let li = document.createElement("li");
+          let ul = document.createElement("ul");
+          li.innerHTML = name1[i];
+          father.appendChild(li);
+          father.insertAdjacentElement("beforeend", ul);
+          for (let j = i + 1; j <= name1.length; j++) {
+            let subs = name1.substring(i, j);
+            let li = document.createElement("li");
+            li.innerHTML = subs;
+            ul.appendChild(li);
+            for (let k = 0; k < name2.length; k++) {
+              let ulTwo = document.createElement("ul");
+              ul.insertAdjacentElement("beforeend", ulTwo);
+              for (let l = k + 1; l <= name2.length; l++) {
+                let subs2 = name2.substring(k, l);
+                let liTwo = document.createElement("li");
+                liTwo.innerHTML = subs + subs2;
+                ulTwo.appendChild(liTwo);
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

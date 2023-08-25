@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>while</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</script>
+</head>
+<body>
+<header>
+	<h2>Aula 18</h2>
+	<h1>Exercícios JavaScript</h1>
+	<h1>Repetição: while</h1>
+</header>
+<main>
+	<h2>Repetição: while</h2>
+	<p>Para os exercícios de <code>while</code>, voltaremos a usar a estrutura como vimos na primeira aula, com tag script no meio do documento e usando <code>document.write();</code> para adicionar HTML à página.</p>
+	<h3>Exercício 16</h3>
+	<p>Conserte o <code>while</code> abaixo para completar o grito até que o botão tenha pelo menos 500px de largura</p>
+	<button id='b16'>&#128561; Aaaa
+		<script type="text/javascript">
+			while (document.getElementById("b16").offsetWidth <= 500) {
+				document.write("a");
+			}
+		</script>
+	!!! &#128561;</button>
+	<h3>Exercício 17</h3>
+	<p>Preencha o parágrafo abaixo com um emoji à sua escolha até que ele tenha pelo menos 200px de altura</p>
+	<!-- Dica: observe o id do parágrafo e faça um código parecido com o do exercício anterior. -->
+	
+	<p id="p17">
+		<script type="text/javascript">
+			while(document.getElementById('p17').offsetHeight <= 200){
+                document.write('&#x1F331;');
+            }
+            // &#1F331
+		</script>
+	</p>
+	<h3>Exercício 18</h3>
+	<p>Crie um parágrafo e preencha-o com uma sequência de 3 ou mais emojis diferentes até que ele tenha pelo menos 300px de altura</p>
+
+	<p id="p18">
+		<script>
+			let emojis = ['&#x1F5A4;', '&#x1F480;', '&#x1F940;'];
+
+			while(document.getElementById('p18').offsetHeight <= 300){
+				document.write(emojis);
+			}
+		</script>
+	</p>
+
+	<h3>Exercício 19</h3>
+	<p>Conforme explicado em aula, o <code>while</code> e o <code>for</code> muitas vezes podem fazer a mesma coisa. Então usamos aquele que fizer mais sentido ou o que for mais fácil.</p>
+	<p>A título de exercício, observe os dois laços de repetição abaixo, que fazem a mesma coisa:</p>
+	<ul>
+		<li><code>for</code></li>
+		<ul>
+			<script type="text/javascript">
+				for (let i=1; i<=10; i++) {
+					document.write("<li>"+i+"</li>");
+				}	
+			</script>
+		</ul>
+	</ul>
+	<ul>
+		<li><code>while</code></li>
+		<ul>
+			<script type="text/javascript">
+				let i=1;
+				while ( i<=10 ) {
+					document.write("<li>"+i+"</li>");
+					i++;
+				}	
+			</script>
+		</ul>
+	</ul>
+	<p>Repare que o <code>while</code> usa os mesmos 3 elementos de dentro do parêntese do <code>for</code>, apenas em outras posições</p>
+	<p>Com base nisso, crie um <code>while</code> que gera uma lista de tópicos com os números pares de 1 a 50</p>
+	<ul>
+		<li><code>while</code> números pares de 1 a 50</li>
+		<ul>
+			<script>
+				let miau = 2;
+				while(miau <= 50){
+					document.write(`<li> ${miau} </li>`);
+					miau += 2;
+				}
+			</script>
+		</ul>
+	</ul>
+	<h3>Exercício 20</h3>
+	<p>Caixa da chatura infinita.</p>
+	<p>Utilize <code>prompt("Pergunta aqui");</code> para fazer uma caixa de pergunta ao usuário. Repita infinitamene a caixa de pergunta até que o usuário digite a resposta certa.</p>
+	<script>
+		let res = prompt('O que é, o que é? Feito para andar e não anda.');
+
+		while(res !== 'rua'){
+			res = prompt('O que é, o que é? Feito para andar e não anda.');
+		}
+	</script>
+</main>
+<footer>
+	<br><br><br>
+	<br><br><br>
+	<br><br><br>
+</footer>
+</body>
+</html>

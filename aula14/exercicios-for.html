@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>for</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script type="text/javascript">
+      function buttonGo(num, tag) {
+        document.getElementById(tag + num).innerHTML = window["exf" + num](
+          document.getElementById("input" + num).value
+        );
+        document.getElementById("input" + num).value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h2>Aula 17</h2>
+      <h1>Exercícios JavaScript</h1>
+      <h1>Repetição: for</h1>
+    </header>
+
+    <main>
+      <h2>Repetição: for</h2>
+
+      <h3>Exercício 5</h3>
+      <p>
+        Adicione conteúdo dentro do for para criar uma lista de tópicos com os
+        números de 1 a 10
+      </p>
+      <input type="hidden" id="input5" placeholder="" />
+      <button onclick="buttonGo('5','d')">Vai!</button>
+      <div id="d5"></div>
+
+      <script type="text/javascript">
+        function exf5(texto) {
+          let s = ""; // Não mexer
+
+          s += "<ul>"; // Abrindo uma lista de tópicos
+          for (let i = 1; i <= 10; i++) {
+            // A partir daqui é que você vai mexer
+
+            s += `<li>${i}</li>`;
+
+            // Fim do que você vai mexer
+          }
+          s += "</ul>"; // Fechando a lista de tópicos
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 6</h3>
+      <p>
+        Sem modificar o parêntese do for, crie uma lista de tópicos com os
+        números de 1 a 10
+      </p>
+      <input type="hidden" id="input6" placeholder="" />
+      <button onclick="buttonGo('6','d')">Vai!</button>
+      <div id="d6"></div>
+
+      <script type="text/javascript">
+        function exf6(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          s += "<ul>"; // Abrindo uma lista de tópicos
+          for (let i = 0; i < 10; i++) {
+            // A partir daqui é que você vai mexer
+            s += `<li>${i + 1}</li>`;
+            // Fim do que você vai mexer
+          }
+          s += "</ul>"; // Fechando a lista de tópicos
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 7</h3>
+      <p>
+        Sem modificar o parêntese do for, crie uma lista de tópicos com os
+        números PARES de 1 a 10
+      </p>
+      <input type="hidden" id="input7" placeholder="" />
+      <button onclick="buttonGo('7','d')">Vai!</button>
+      <div id="d7"></div>
+
+      <script type="text/javascript">
+        function exf7(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          s += "<ul>"; // Abrindo uma lista de tópicos
+          for (let i = 1; i <= 5; i++) {
+            // A partir daqui é que você vai mexer
+            s += `<li>${i * 2}</li>`;
+            // Fim do que você vai mexer
+          }
+          s += "</ul>"; // Fechando a lista de tópicos
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 8</h3>
+      <p>
+        Complete o for abaixo para criar uma lista de tópicos com a tabuada de 7
+      </p>
+      <input type="hidden" id="input8" placeholder="" />
+      <button onclick="buttonGo('8','d')">Vai!</button>
+      <div id="d8"></div>
+
+      <script type="text/javascript">
+        function exf8(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          // A partir daqui é que você vai mexer
+          s += "<ul>";
+          for (let i = 1; i <= 10; i++) {
+            s += `<li>7 x ${i} = ${7 * i}</li>`;
+          }
+          s += "</ul>";
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 9</h3>
+      <p>Crie a tabuada do número que o usuário digitou</p>
+      <p>
+        Atenção! Nesse exercício você vai montar toda a ul e todo o for em seu
+        código.
+      </p>
+      <input type="number" id="input9" placeholder="" />
+      <button onclick="buttonGo('9','d')">Vai!</button>
+      <div id="d9"></div>
+
+      <script type="text/javascript">
+        function exf9(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          // A partir daqui é que você vai mexer
+          s += "<ul>";
+          for (let i = 1; i <= texto; i++) {
+            s += `<li>${texto} x ${i} = ${texto * i}</li>`;
+          }
+          s += "</ul>";
+          // Não se esqueça de abrir a ul antes de criar os li dentro
+
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 10</h3>
+      <p>
+        Mostre seu nome como uma lista de tópicos, um tópico para cada letra
+      </p>
+      <input type="hidden" id="input10" placeholder="" />
+      <button onclick="buttonGo('10','d')">Vai!</button>
+      <div id="d10"></div>
+
+      <script type="text/javascript">
+        function exf10(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          // A partir daqui é que você vai mexer
+          /*
+			DICA: você pode usar for in para varrer uma string, da mesma forma que usaria para varrer uma lista
+			Alguns trechos de código que você vai usar:
+				for (let i in nome) {}
+				nome[i]
+			*/
+          let nome = "vick";
+          s += "<ul>";
+          for (let i in nome) {
+            s += `<li>${nome[i]}</li>`;
+          }
+          s += "</ul>";
+
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 11</h3>
+      <p>
+        Mostre o nome que o usuário digitou na caixa como uma lista de tópicos,
+        um tópico para cada letra
+      </p>
+      <input type="text" id="input11" placeholder="" />
+      <button onclick="buttonGo('11','d')">Vai!</button>
+      <div id="d11"></div>
+
+      <script type="text/javascript">
+        function exf11(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          // A partir daqui é que você vai mexer
+          s += "<ul>";
+          for (let i in texto) {
+            s += `<li>${texto[i]}</li>`;
+          }
+          s += "</ul>";
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 12</h3>
+      <p>
+        O código abaixo contém uma lista de nomes de alunos e uma lista com suas
+        respectivas notas.
+      </p>
+      <p>Crie uma lista mostrando em cada tópico um nome e a sua nota.</p>
+      <input type="hidden" id="input12" placeholder="" />
+      <button onclick="buttonGo('12','d')">Vai!</button>
+      <div id="d12"></div>
+
+      <script type="text/javascript">
+        function exf12(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          let alunos = ["Amanda", "Bruno", "Camila", "Daniel", "Enzo"];
+          let notas = [8.2, 7.0, 10, 4, 6.5];
+
+          // A partir daqui é que você vai mexer
+          for (let aluno in alunos) {
+            s += `<li>${alunos[aluno]}: ${notas[aluno]}</li>`;
+          }
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 13</h3>
+      <p>
+        Sem modificar o parêntese do for, mostre uma lista de número PARES de 1
+        a 10
+      </p>
+      <input type="hidden" id="input13" placeholder="" />
+      <button onclick="buttonGo('13','d')">Vai!</button>
+      <div id="d13"></div>
+
+      <script type="text/javascript">
+        function exf13(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          s += "<ul>";
+          for (let i = 1; i <= 10; i++) {
+            // A partir daqui é que você vai mexer
+            if (i % 2 == 0) {
+              s += `<li>${i}</li>`;
+            }
+            // Fim do que você vai mexer
+          }
+          s += "</ul>";
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 14</h3>
+      <p>
+        O código abaixo contém uma lista de nomes de alunos e uma lista com suas
+        respectivas notas.
+      </p>
+      <p>
+        Crie uma lista mostrando em cada tópico um nome, sua nota E sua situação
+        de acordo com o critério abaixo:
+      </p>
+      <ul>
+        <li>Aprovado: nota 7 ou maior</li>
+        <li>Recuperação: nota entre 6 e 7</li>
+        <li>Reprovado: nota menor que 6</li>
+      </ul>
+      <input type="hidden" id="input14" placeholder="" />
+      <button onclick="buttonGo('14','d')">Vai!</button>
+      <div id="d14"></div>
+
+      <script type="text/javascript">
+        function exf14(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          let alunos = ["Amanda", "Bruno", "Camila", "Daniel", "Enzo"];
+          let notas = [8.2, 7.0, 10, 4, 6.5];
+
+          // A partir daqui é que você vai mexer
+          function notaStatus(aluno, nota) {
+            let status = "";
+            if (nota < 6) {
+              status = "reprovado";
+            } else if (nota >= 6 && nota < 7) {
+              status = "recuperação";
+            } else {
+              status = "aprovado";
+            }
+
+            return `${aluno}: ${nota} - ${status}`;
+          }
+
+          for (let aluno in alunos) {
+            s += `<li>${notaStatus(alunos[aluno], notas[aluno])}</li>`;
+          }
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+
+      <h3>Exercício 15</h3>
+      <p>
+        SEPARE os alunos em 3 listas distintas, uma para cada situação, seguindo
+        os mesmos critérios do exercício anterior
+      </p>
+      <input type="hidden" id="input15" placeholder="" />
+      <button onclick="buttonGo('15','d')">Vai!</button>
+      <div id="d15"></div>
+
+      <script type="text/javascript">
+        function exf15(texto) {
+          // Não mexer
+          let s = ""; // Não mexer
+
+          let alunos = ["Amanda", "Bruno", "Camila", "Daniel", "Enzo"];
+          let notas = [8.2, 7.0, 10, 4, 6.5];
+
+          // A partir daqui é que você vai mexer
+          let aprovados = [];
+          let reprovados = [];
+          let recuperacao = [];
+          for (let aluno in alunos) {
+            if (notas[aluno] < 6) {
+              reprovados.push(alunos[aluno]);
+            } else if (notas[aluno] >= 6 && notas[aluno] < 7) {
+              recuperacao.push(alunos[aluno]);
+            } else {
+                aprovados.push(alunos[aluno]);
+            }
+          }
+
+          s += `<ul>`;
+            s += `<li>Aprovados</li>`;
+            s += `<ul>`;
+            for (const aprovado in aprovados) {
+                s += `<li>${aprovados[aprovado]}</li>`;
+            }
+            s += `</ul>`;
+            s += `<li>Recuperação</li>`;
+            s += `<ul>`;
+            for (const recuperado in recuperacao) {
+                s += `<li>${recuperacao[recuperado]}</li>`;
+            }
+            s += `</ul>`;
+            s += `<li>Reprovados</li>`;
+            s += `<ul>`;
+            for (const reprovado in reprovados) {
+                s += `<li>${reprovados[reprovado]}</li>`;
+            }
+            s += `</ul>`;
+          s += `</ul>`;
+
+          // Fim do que você vai mexer
+
+          return s; // Não mexer
+        }
+      </script>
+    </main>
+
+    <footer>
+      <br /><br /><br />
+      <br /><br /><br />
+      <br /><br /><br />
+    </footer>
+  </body>
+</html>

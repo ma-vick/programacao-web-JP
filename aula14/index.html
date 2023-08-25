@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 14 - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>aula 14 - JavaScript</h1>
+    </header>
+    <main>
+        <script>
+            let nota = 0;
+            nota = 3;
+            nota = 5;
+            nota++;
+
+            if(nota >= 7){
+                document.write(`<p>sua nota é: ${nota} logo, aprovado!</p>`);
+            }
+
+            if(nota >= 7){
+                document.write(`<p>sua nota é: ${nota} logo, aprovado!</p>`);
+            } else if(nota >= 6){
+                document.write(`<p>sua nota é: ${nota} logo, recuperação.</p>`);
+            } else {
+                document.write(`<p>sua nota é: ${nota} logo, reprovado!</p>`)
+            }
+
+            let hoje = new Date();
+
+            document.write(`<p>Hoje é: `);
+
+            switch (hoje.getDay()) {
+                case 0:
+                    document.write('domingo');
+                    break;
+                case 1:
+                    document.write('segunda-feira');
+                    break;
+                case 2:
+                    document.write('terça-feira');
+                    break;
+                case 3:
+                    document.write('quarta-feira');
+                    break;
+                case 5:
+                    document.write('quinta-feira');
+                    break;
+                case 6:
+                    document.write('SEXTOOOOU!');
+                    break;
+                default:
+                    document.write('sábadooou!');
+                    break;
+            }
+            document.write(`, dia ${hoje.toLocaleDateString()}`)
+        </script>
+
+        <h2>repetição</h2>
+        <h3>for</h3>
+        <p>números de 1 a 10:</p>
+        <ul>
+            <script>
+                for(let i = 1; i <= 10; i++){
+                    document.write(`<li>${i}</li>`);
+                }
+            </script>
+        </ul>
+        <p>números pares até 10</p>
+        <ul>
+            <script>
+                for(let i = 2; i <= 10; i+=2){
+                    document.write(`<li>${i}</li>`);
+                }
+            </script>
+        </ul>
+        <h3>while</h3>
+        <p>adicionar conteúdo até a caixa main ficar mais alta que 1000px</p>
+        <script>
+            let mainbox = document.querySelector('main');
+            let h = mainbox.offsetHeight;
+
+            while (h < 1000) {
+                document.write('<p>&#127756;</p>');
+                h = mainbox.offsetHeight;
+            }
+        </script>
+        <p>quem é a mais linda?</p>
+        <script>
+            let resposta = '';
+            // do {
+            //     resposta = prompt('quem é a mais linda?');
+            // } while (resposta != 'vick');
+            // document.write(`<p>resposta: ${resposta}</p>`);
+        </script>
+        <p>for in</p>
+        <ul>
+            <li>lista só com índices</li>
+            <ul>
+                <script>
+                    indices = ['oi', 'tudo', 'bem'];
+                    for(let i in indices){
+                        document.write(`<li>${i}</li>`);
+                    }
+                </script>
+            </ul>
+            <li>lista com valores e chaves</li>
+            <ul>
+                <script>
+                    let chaves = {'sorvete': 'pavê', 'bolo': 'chocolate'};
+                    for(let c in chaves){
+                        document.write(`<li>${c}</li>`);
+                    }
+                </script>
+            </ul>
+        </ul>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

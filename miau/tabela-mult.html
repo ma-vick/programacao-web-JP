@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabela de multiplicação</title>
+    <style>
+        table {
+        border-collapse: collapse;
+        }
+
+        table, td {
+            border: 2px solid blueviolet;
+        }
+
+        td {
+            padding: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>multiplicação.</h1>
+    <div onclick="multTable()">
+        aqui!
+        <table id="tabMulti"></table>
+    </div>
+
+    <script>
+        function multTable(){
+            const tab = document.getElementById('tabMulti');
+
+            for(row = 1; row <= 10; row++){
+                let newRow = document.createElement('tr');
+                for(col = 1; col <= 10; col++){
+                    let newCol = document.createElement('td');
+                    let result = row * col;
+                    let equation = document.createTextNode(result);
+                    newCol.appendChild(equation);
+                    newRow.appendChild(newCol);
+                }
+            tab.appendChild(newRow)
+            }
+        }
+    </script>
+    <script src="/miau/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aula 05</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="mainbox">
+      <h1>aula 5</h1>
+      <p class="pave">tags HTML de formação de texto:</p>
+      <ul>
+        <li>negrito: <strong>strong</strong></li>
+        <li>riscado: <del>del</del></li>
+        <li>itálicos:</li>
+        <!-- subtópicos -->
+        <ul>
+          <li>ênfase: <em>em</em></li>
+          <li>citação: <cite>cite</cite></li>
+        </ul>
+      </ul>
+      <h3>links</h3>
+      <ul>
+        <li>para criar um <a href="/aula05/icon-html5.png">link</a>, usamos a tag &lt;a&gt;</li>
+        <li>o link pode apontar para uma página local ou para <a href="https://github.com/ma-vick" target="_blank">uma página na internet</a></li>
+        <li><a href="../aula02/index.html" target="_blank">página local</a> em outra pasta</li>
+        <li>para o link abrir em outra aba, usamos a <a href="https://www.youtube.com/watch?v=SBmSRK3feww&ab_channel=SuperSimpleDev" target="_blank">propriedade target</a></li>
+      </ul>
+      <hr />
+      <h2>o que é o HTML?</h2>
+      <p class="description">
+        Atualmente o papel da HTML não é apenas estruturar documentos para a
+        web, mas também descrever o significado do conteúdo presente nesses
+        documentos por meio de tags semânticas. O HTML semântico tem como
+        objetivo descrever o significado do conteúdo presente em documentos
+        HTML, tornando-o mais claro tanto para programadores quanto para
+        browsers e outras engines que processam essa informação.
+      </p>
+      <img src="/aula05/icon-html5.png" alt="icon HTML5">
+      <hr />
+      <h2>principais tags semânticas HTML:</h2>
+      <ul>
+        <li><a href="#header-exemplo">header</a></li>
+        <li><a href="#section-exemplo">section</a></li>
+        <li><a href="#article-exemplo">article</a></li>
+        <li><a href="#nav-exemplo">nav</a></li>
+      </ul>
+      <hr />
+      <div id="header-exemplo" class="exemplo">
+        <h3>header</h3>
+        <p>
+          O &lt;header&gt; é utilizado para representar o cabeçalho de um
+          documento ou seção declarado no HTML. Nele podemos inserir elementos
+          de &lt;h1&gt; a &lt;h6&gt;, até elementos para representar imagens,
+          parágrafos ou mesmo listas de navegação.
+        </p>
+        <br />
+        <p>Exemplo de uso de &lt;header&gt;:</p>
+        <pre>
+            <code>
+            &lt;header&gt;
+                &lt;h1&gt;Título da página&lt;/h1&gt;
+                &lt;h2&gt;Subtítulo da página&lt;/h2&gt;
+            &lt;/header&gt;
+            </code>
+        </pre>
+      </div>
+      <hr />
+      <div id="section-exemplo" class="exemplo">
+        <h3>section</h3>
+        <p>
+          O elemento &lt;section&gt; representa uma seção dentro de um documento
+          e geralmente contém um título, o qual é definido por meio de um dos
+          elementos entre &lt;h1&gt; e &lt;h6&gt;. Podemos utilizar o
+          &lt;section&gt;, por exemplo, para descrever as seções/tópicos de um
+          documento.
+        </p>
+        <br />
+        <p>Exemplo de uso de &lt;section&gt;:</p>
+        <pre>
+            <code>
+            &lt;section&gt;
+                &lt;h3&gt;seção 1&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit beatae voluptatem veritatis sapiente similique alias impedit rerum sed officiis ad autem facilis, fugiat, optio quos ut quae expedita odio necessitatibus.&lt;/p&gt;
+            &lt;/section&gt;
+            </code>
+        </pre>
+      </div>
+      <hr />
+      <div id="article-exemplo" class="exemplo">
+        <h3>article</h3>
+        <p>
+            Utilizamos o elemento &lt;article&gt; quando precisamos declarar um conteúdo que não precisa de outro para fazer sentido em um documento HTML, por exemplo, um artigo em um blog. É recomendado identificar cada &lt;article&gt; com um título.
+        </p>
+        <br />
+        <p>Exemplo de uso de &lt;article&gt;:</p>
+        <pre>
+            <code>
+            &lt;article&gt;
+                &lt;h3&gt;Título do artigo 1&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit beatae voluptatem veritatis sapiente similique alias impedit rerum sed officiis ad autem facilis, fugiat, optio quos ut quae expedita odio necessitatibus.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+            &lt;h3&gt;Título do artigo 2&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit beatae voluptatem veritatis sapiente similique alias impedit rerum sed officiis ad autem facilis, fugiat, optio quos ut quae expedita odio necessitatibus.&lt;/p&gt;
+            &lt;/article&gt;
+            </code>
+        </pre>
+      </div>
+      <hr />
+      <div id="nav-exemplo" class="exemplo">
+        <h3>nav</h3>
+        <p>
+          O &lt;nav&gt; é utilizado quando precisamos representar um agrupamento de links de navegação, que, por sua vez, são criados com os elementos &lt;ul&gt;, &lt;li&gt; e &lt;a&gt;.
+        </p>
+        <br />
+        <p>Exemplo de uso de &lt;nav&gt;:</p>
+        <pre>
+            <code>
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;pagina 1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;pagina 2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;pagina 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            </code>
+        </pre>
+      </div>
+    </div> <!-- mainbox -->
+    <footer>fonte: <a href="https://www.devmedia.com.br/html-semantico-conheca-os-elementos-semanticos-da-html5/38065" target="_blank">devmedia</a></footer>
+  </body>
+</html>
